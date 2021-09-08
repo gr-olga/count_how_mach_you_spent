@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Gr-Olga" name="author">
+    <link href="index.css" rel="stylesheet">
+    <title>Statistic Spending</title>
+</head>
+<body class="body">
+<header></header>
+<main class="main">
+    <div>
+        <h2 class="title">Do you want to know where your many?</h2>
+        <form class="form">
+            <label class="label">
+                <input class="input" type="file" placeholder="PDF" required>
+                <span id="error" class="message-error"></span>
+            </label>
+            <button type="submit" class="submitBtn">Show spending</button>
+        </form>
+    </div>
+    <section class="result">
+   <template id ="list">
+            <div class="container">
+<!--                <div class="category">-->
+                    <p class="place">place</p>
+                    <p class="sum">sum</p>
+                    <p class="period">period</p>
+<!--                </div>-->
+            </div>
+   </template>
+    </section>
+</main>
+<footer></footer>
+<section>
+    <script src="index.js"></script>
+</section>
+</body>
