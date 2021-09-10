@@ -1,5 +1,5 @@
 // import {List} from "./components/List";
-// import {Renderer} from "./components/Renderer";
+// import {Renderer} from "./components/Renderer"
 
 const input = document.querySelector('.input');
 const submitBtn = document.querySelector('.submitBtn');
@@ -28,12 +28,60 @@ const cardsList = [
         place: "MoonMarket",
         sum: "600",
         period: "11/11/12"
-    }
+    },
+
+    {
+        place: "SunMarket",
+        sum: "200",
+        period: "12/12/12"
+    },
+
+
+    {
+        place: "MoonMarket",
+        sum: "600",
+        period: "11/11/12"
+    },
+
+
+    {
+        place: "SunMarket",
+        sum: "200",
+        period: "12/12/12"
+    },
+
+    {
+        place: "MoonMarket",
+        sum: "600",
+        period: "11/11/12"
+    },
+
+    {
+        place: "FooMarket",
+        sum: "20",
+        period: "12/12/12"
+    },
+
+    {
+        place: "BooMarket",
+        sum: "60",
+        period: "11/11/12"
+    },
+    {
+        place: "FooMarket",
+        sum: "20",
+        period: "12/12/12"
+    },
+
+    {
+        place: "BooMarket",
+        sum: "60",
+        period: "11/11/12"
+    },
+
 ]
 
-
 cardsList.forEach((obj) => renderList(obj.place, obj.sum, obj.period));
-
 
 function renderList(place, sum, period) {
     const listTemplate = document.querySelector('#list').content;
@@ -47,15 +95,14 @@ function renderList(place, sum, period) {
 submitBtn.addEventListener('click', () => renderList(cardsList));
 
 
-function countSum(list) {
-    const sumSum = list
-        .map((item) => item.sum)
-        .map(Number)
-        .reduce((akk, prev) => akk + prev, 0)
-    console.log(sumSum)
-}
+// function countSum(list) {
+//     const sumSum = list
+//         .map((item) => item.sum)
+//         .map(Number)
+//         .reduce((akk, prev) => akk + prev, 0)
+//     console.log(sumSum)
+// }
 
-// submitBtn.addEventListener('click', () => placeName(cardsList));
 
 function sumByPlace(list, placeName) {
     const sumSum = list
@@ -74,26 +121,19 @@ function placeName(list) {
         })
     for (const key in placeSumList) {
         const value = placeSumList[key]
-        const listTemplate = document.querySelector('#spec-list').content;
-        const listElement = listTemplate.querySelector('.specific').cloneNode(true);
-        listElement.querySelector('.place').textContent = key;
-        listElement.querySelector('.sum').textContent = value;
-        listSum.prepend(listElement);
+        placeSum(key, value)
     }
-
-
 }
 
 
 specBtn.addEventListener('click', () => placeName(cardsList))
 
-//
-function placeSum({place, sum}) {
+function placeSum(place, sum) {
     console.log(place, sum);
     const listTemplate = document.querySelector('#spec-list').content;
     const listElement = listTemplate.querySelector('.specific').cloneNode(true);
     listElement.querySelector('.place').textContent = place;
     listElement.querySelector('.sum').textContent = sum;
-    listGrid.prepend(listElement);
+    listSum.prepend(listElement);
 }
 
