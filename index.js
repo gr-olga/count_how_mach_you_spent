@@ -8,80 +8,103 @@ const listGrid = document.querySelector('.result');
 const listSum = document.querySelector('.sum')
 
 
-const cardsList = [
-    {
-        place: "SunMarket",
-        sum: "200",
-        period: "12/12/12"
-    },
-    {
-        place: "MoonMarket",
-        sum: "600",
-        period: "11/11/12"
-    },
-    {
-        place: "SunMarket",
-        sum: "200",
-        period: "12/12/12"
-    },
-    {
-        place: "MoonMarket",
-        sum: "600",
-        period: "11/11/12"
-    },
+// const cardsList = [
+//     {
+//         place: "SunMarket",
+//         sum: "200",
+//         period: "12/12/12"
+//     },
+//     {
+//         place: "MoonMarket",
+//         sum: "600",
+//         period: "11/11/12"
+//     },
+//     {
+//         place: "SunMarket",
+//         sum: "200",
+//         period: "12/12/12"
+//     },
+//     {
+//         place: "MoonMarket",
+//         sum: "600",
+//         period: "11/11/12"
+//     },
+//
+//     {
+//         place: "SunMarket",
+//         sum: "200",
+//         period: "12/12/12"
+//     },
+//
+//
+//     {
+//         place: "MoonMarket",
+//         sum: "600",
+//         period: "11/11/12"
+//     },
+//
+//
+//     {
+//         place: "SunMarket",
+//         sum: "200",
+//         period: "12/12/12"
+//     },
+//
+//     {
+//         place: "MoonMarket",
+//         sum: "600",
+//         period: "11/11/12"
+//     },
+//
+//     {
+//         place: "FooMarket",
+//         sum: "20",
+//         period: "12/12/12"
+//     },
+//
+//     {
+//         place: "BooMarket",
+//         sum: "60",
+//         period: "11/11/12"
+//     },
+//     {
+//         place: "FooMarket",
+//         sum: "20",
+//         period: "12/12/12"
+//     },
+//
+//     {
+//         place: "BooMarket",
+//         sum: "60",
+//         period: "11/11/12"
+//     },
+//
+// ]
 
-    {
-        place: "SunMarket",
-        sum: "200",
-        period: "12/12/12"
-    },
+// cardsList.forEach((obj) => renderList(obj.place, obj.sum, obj.period));
 
+const data = 'SunMarket:  200:  12 / 12 / 12\nMoonMarket:  600:  11 / 11 / 12\nSunMarket   200  12 / 12 / 12\nMoonMarket   600  11 / 11 / 12';
 
-    {
-        place: "MoonMarket",
-        sum: "600",
-        period: "11/11/12"
-    },
+function a(data) {
+    const dataList = data.split('\n');
+    dataList.map(i => {
+        const dataItemPlace = i.split(' ')[0]
+        const place = {place: dataItemPlace};
+        const dataItemSum = i.split('  ')[1]
+        const sum = {sum: dataItemSum};
+        const dataItemPeriod = i.split('  ')[2]
+        const period = {period: dataItemPeriod};
 
+        console.log(place, sum, period);
 
-    {
-        place: "SunMarket",
-        sum: "200",
-        period: "12/12/12"
-    },
+        // {sum:dataItem},
+        // {period:dataItem})
+    })
+}
 
-    {
-        place: "MoonMarket",
-        sum: "600",
-        period: "11/11/12"
-    },
-
-    {
-        place: "FooMarket",
-        sum: "20",
-        period: "12/12/12"
-    },
-
-    {
-        place: "BooMarket",
-        sum: "60",
-        period: "11/11/12"
-    },
-    {
-        place: "FooMarket",
-        sum: "20",
-        period: "12/12/12"
-    },
-
-    {
-        place: "BooMarket",
-        sum: "60",
-        period: "11/11/12"
-    },
-
-]
-
-cardsList.forEach((obj) => renderList(obj.place, obj.sum, obj.period));
+a(data)
+// dataList.forEach((obj) => console.log(obj));
+// recognizePDF(data)
 
 function renderList(place, sum, period) {
     const listTemplate = document.querySelector('#list').content;
@@ -125,6 +148,8 @@ function placeName(list) {
     }
 }
 
+// TO DO add submit to btn
+
 
 specBtn.addEventListener('click', () => placeName(cardsList))
 
@@ -136,4 +161,13 @@ function placeSum(place, sum) {
     listElement.querySelector('.sum').textContent = sum;
     listSum.prepend(listElement);
 }
+
+// work with input
+//
+// function recognizePDF(data) {
+
+// }
+
+
+//todo made react-app
 
